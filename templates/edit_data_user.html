@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <title>Edit Data User</title>
+  </head>
+
+  <body>
+    <h1>Edit data {{ data['username'] }}</h1>
+    
+    <form method="POST">
+      Email : <input name="email" type="text" value="{{ data['email'] }}" required><br>
+      Username : <input name="usernm" type="text" value="{{ data['username'] }}" required><br>
+      Alamat : <input name="alamat" type="text" value="{{ data['alamat'] }}" required><br>
+      Sandi : <input name="sandi" type="text" value="{{ data['sandi'] }}" required><br><br>
+      <input type="submit" value="Simpan Perubahan!">
+    </form><br>
+
+    <a href="{{ url_for('user', id = data['_id']) }}">Kembali</a>
+  </body>
+</html>
