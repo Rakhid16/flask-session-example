@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>Dashboard Admin</title>
+  </head>
+
+  <body>
+    <h1>Selamat datang {{ id }}!</h1>
+    Data <i>Users</i> :
+    
+    <table border="1px">
+      <thead>
+        <tr>
+          <th>Email</th>
+          <th>Username</th>
+          <th>Alamat</th>
+          <th>Sandi</th>
+        </tr>
+      </thead>
+      <tbody> {% for elemen in data %}
+        <tr>
+          <td>{{ elemen['email'] }}</td>
+          <td>{{ elemen['username'] }}</td>
+          <td>{{ elemen['alamat'] }}</td>
+          <td>{{ elemen['sandi'] }}</td>
+        </tr> {% endfor %}
+      </tbody>
+    </table><br>
+
+    Tambah akun baru :<br>
+    <form method="POST">
+      Email : <input name="email" type="email" placeholder="Masukkan email anda" required><br>
+      Username : <input name="usernm" type="text" placeholder="Masukkan kata username anda" required><br>
+      Alamat : <input name="alamat" type="text" placeholder="Masukkan alamat anda" required><br>
+      Sandi : <input name="sandi" type="text" placeholder="Masukkan kata sandi anda" required><br><br>
+      <input value="Tambahkan!" type="submit">
+    </form>
+
+    <a href="{{ url_for('logout') }}">Keluar</a>
+  </body>
+</html>
