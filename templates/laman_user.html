@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <title>Dashboard User</title>
+  </head>
+
+  <body>
+    <h1>Selamat datang {{ data['username'] }}!</h1>
+    Email : {{ data['email'] }} <br>
+    Username : {{ data['username'] }} <br>
+    Alamat : {{ data['alamat'] }} <br>
+    Sandi : {{ data['sandi'] }} <br><br>
+
+    <a href="{{ url_for('user_edit_data', id = data['_id']) }}">Edit Data</a>
+    <a href="{{ url_for('user_hapus_akun', id = data['_id']) }}">Hapus Akun</a><br><br>
+    <a href="{{ url_for('logout') }}">Keluar</a>
+  </body>
+</html>
